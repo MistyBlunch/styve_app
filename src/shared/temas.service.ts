@@ -9,6 +9,7 @@ export class TemasService {
     temasObservable: Observable<any>;
 
     constructor(public db: AngularFireDatabase){
+        // evetos xdxd
         this.temasReference = db.list('eventos');
         this.temasObservable = this.temasReference.snapshotChanges()
          .map(cambios => {
