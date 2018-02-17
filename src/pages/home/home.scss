@@ -1,3 +1,25 @@
 page-home {
 
+    .row-container{
+        display: flex;
+        flex-direction: row;
+        height: 50%;
+        .subject-container {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 70%;
+            margin-bottom: 0%;
+            .icon{
+                border-radius: 50%;
+                width: 100%;
+            }
+        }
+    }
+
+    
+
+    
+
 }
