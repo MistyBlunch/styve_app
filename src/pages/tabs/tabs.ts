@@ -13,9 +13,9 @@ export class TabsPage {
   
   HomeRoot = HomePage;
   ProfileRoot = ProfilePage;
-  MessageRoot = MessagesPage;
+  MessagesRoot = MessagesPage;
   SearchRoot = SearchPage;
-//   tab3Root = FeedPage;
+//  tab3Root = FeedPage;
 
   constructor() {
 
