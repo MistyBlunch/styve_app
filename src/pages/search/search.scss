@@ -1,0 +1,53 @@
+.scroll-content {
+    padding: 0;
+
+    .levels-container {
+        width: 100%;
+        background-color: rgb(218, 213, 213);
+        display: flex;
+        margin-bottom: 2rem;
+
+        .levels-row {
+            width: 33.3rem;
+            display: flex;
+            flex-direction: column;
+
+            .levels {
+                font-weight: 900;
+                text-align: center;
+            }
+        }
+    }
+
+    .questions-container {
+        height: 100%;
+
+
+        .questions-box {
+            height: 15rem;
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(209, 208, 208);
+            margin: 1rem;
+
+            .profile {
+                width: 25%;
+
+                .person-img {
+                    width: 100%;
+                }
+
+                .person-name {
+                    margin: 0;
+                    font-size: 10px;
+                }
+
+                .level {
+                    width: 100%;
+                    padding: 0;
+                    background-color: rgba(255, 255, 255, 0);           
+                }
+            }
+        }
+    }
+}

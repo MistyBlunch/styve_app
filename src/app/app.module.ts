@@ -14,7 +14,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { TemasService } from '../shared/temas.service';
 
 import { config } from '../firebaseConfig';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
 @NgModule({
@@ -28,7 +28,9 @@ import { AngularFireModule } from 'angularfire2';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
