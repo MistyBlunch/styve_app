@@ -1,1 +1,18 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="pagecontent">
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <button ion-button menuClose>Close Menu</button>
+        </ion-item>
+        <!-- <ion-item>
+          <button ion-button (click)="goToFeed()">Feed</button>
+        </ion-item> -->
+      </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav
+#pagecontent
+[root]="rootPage"
+>
+</ion-nav>

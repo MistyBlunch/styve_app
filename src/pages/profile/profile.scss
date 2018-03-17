@@ -32,6 +32,21 @@
             }
         }
 
+        .item-inner{
+            border-bottom: transparent !important;
+            padding: 0;
+        }
+
+        ion-item ion-range.level {
+            background-color: transparent !important;    
+        }
+
+        p#level-name {
+            margin: 0 0.7rem 0 0;
+            text-align: right;
+            font-weight: 900;
+        }
+
         .profile-options {
             width: 100%;
             // padding: 1rem;

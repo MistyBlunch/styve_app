@@ -9,16 +9,23 @@
 <ion-content>
   <div class="container profile-page">
     <div class="profile">
-      <img class="profile-img" alt="Add image" src="https://vignette.wikia.nocookie.net/assassinscreed/images/c/c8/84875_add_512x512.png/revision/latest/scale-to-width-down/480?cb=20170830130518">
+      <ion-item>
+        <ion-avatar item start>
+          <img [src]="avatar">
+        </ion-avatar>
+      </ion-item>
+      <!-- <img class="profile-img" alt="Add image" src="https://vignette.wikia.nocookie.net/assassinscreed/images/c/c8/84875_add_512x512.png/revision/latest/scale-to-width-down/480?cb=20170830130518"> -->
       <div class="profile-content">
-        <h5 class="profile-name" >Main Poodley</h5>
+        <h5 class="profile-name">{{ name }}</h5>
         <!-- <h6>Hi I can help you in Arduino and phyton Language, follow me on Youtube.</h6> -->
         <ion-item>
           <ion-range class="level" [(ngModel)]="brightness">
             <ion-icon range-left small name="help"></ion-icon>
             <ion-icon range-right name="flash"></ion-icon>
           </ion-range>
+          <!-- <p>{{ level }}</p> LEVEL se encuentra en .ts -->
         </ion-item>
+        <p id="level-name">{{ level }}</p> 
       </div>
     </div>
     <div class="profile-options">
