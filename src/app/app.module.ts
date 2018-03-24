@@ -19,9 +19,9 @@ import { NotificationPage } from '../pages/notifications/notifications';
 import { SearchPage } from '../pages/search/search';
 import { TabsPage } from '../pages/tabs/tabs';
 
-// para importar de shared
-import { SubjectService } from '../shared/subject.service';
-import { QuestionsService } from '../shared/questions.service';
+// para importar de general
+import { GeneralService } from '../shared/general.service';
+// import { QuestionsService } from '../shared/questions.service';
 
 @NgModule({
   declarations: [
@@ -51,8 +51,7 @@ import { QuestionsService } from '../shared/questions.service';
   providers: [
     StatusBar,
     SplashScreen,
-    SubjectService,
-    QuestionsService,
+    GeneralService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,116 +1,122 @@
-.scroll-content {
-    padding: 0;
+ion-title {
+    text-align: center
+}
 
-    .container.profile-page {
-        padding: 20px;
-        width: 100%;
+page-profile{
+    .scroll-content {
+        padding: 0;
 
-        .profile {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 30%;
-
-            img.profile-img {
-                height: 30%;
-                width: 30%;
-                border-radius: 50%;
-            }
-
-            .profile-content {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-
-                .profile-name {
-                    display: block;
-                    text-align: right;
-                    margin-bottom: 0px;
-                    margin-right: 0.53rem;
-                }
-                
-            }
-        }
-
-        .item-inner{
-            border-bottom: transparent !important;
-            padding: 0;
-        }
-
-        ion-item ion-range.level {
-            background-color: transparent !important;    
-        }
-
-        p#level-name {
-            margin: 0 0.7rem 0 0;
-            text-align: right;
-            font-weight: 900;
-        }
-
-        .profile-options {
-            width: 100%;
-            // padding: 1rem;
-
-            .botones {
-                .boton-opcion {
-                    margin-right: 2rem;
-                }
-            }
-        }
-
-        .courses-help, .courses-learn, .social-media {
+        .container.profile-page {
+            padding: 20px;
             width: 100%;
 
-            .help, .learn {
-                width: 100%;
-                background-color: rgb(199, 194, 194);
-
-                .courses-list {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    padding: 1rem;
-
-                    .courses {
-                        width: 33.3%;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        margin: 1rem;
-
-                        .course-img {
-                            width: 100%;
-                            border-radius: 30%;
-
-                        }
-
-                        .course-name {
-                            font-size: 15px;
-                            color: black;
-                            font-weight: 900;
-                            text-align: center;
-                            margin: 0.5rem;
-                        }
-                    }
-                }
-            }
-        
-            .smedia-list {
+            .profile {
                 display: flex;
                 flex-direction: row;
-                margin: 2rem 4rem 0 2rem;
+                width: 100%;
+                height: 30%;
 
-                .smedia {
-                    align-items: center;
+                img.profile-img {
+                    height: 30%;
+                    width: 30%;
+                    border-radius: 50%;
+                }
+
+                .profile-content {
                     display: flex;
                     flex-direction: column;
-                    width: 33.3rem;
+                    width: 100%;
 
-                    .smedia-img {
-                        width: 40%;
+                    .profile-name {
+                        display: block;
+                        text-align: right;
+                        margin-bottom: 0px;
+                        margin-right: 0.53rem;
+                    }
+                    
+                }
+            }
+
+            .item-inner{
+                border-bottom: transparent !important;
+                padding: 0;
+            }
+
+            ion-item ion-range.level {
+                background-color: transparent !important;    
+            }
+
+            p#level-name {
+                margin: 0 0.7rem 0 0;
+                text-align: right;
+                font-weight: 900;
+            }
+
+            .profile-options {
+                width: 100%;
+                // padding: 1rem;
+
+                .botones {
+                    .boton-opcion {
+                        margin-right: 2rem;
                     }
                 }
             }
-        }
-    }   
+
+            .courses-help, .courses-learn, .social-media {
+                width: 100%;
+
+                .help, .learn {
+                    width: 100%;
+                    background-color: rgb(199, 194, 194);
+
+                    .courses-list {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 1rem;
+
+                        .courses {
+                            width: 33.3%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 1rem;
+
+                            .course-img {
+                                width: 100%;
+                                border-radius: 30%;
+
+                            }
+
+                            .course-name {
+                                font-size: 15px;
+                                color: black;
+                                font-weight: 900;
+                                text-align: center;
+                                margin: 0.5rem;
+                            }
+                        }
+                    }
+                }
+            
+                .smedia-list {
+                    display: flex;
+                    flex-direction: row;
+                    margin: 2rem 4rem 0 2rem;
+
+                    .smedia {
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        width: 33.3rem;
+
+                        .smedia-img {
+                            width: 40%;
+                        }
+                    }
+                }
+            }
+        }   
+    }
 }

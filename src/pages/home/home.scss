@@ -1,3 +1,7 @@
+ion-title {
+    text-align: center
+}
+
 page-home {
 
 .scroll-content{
@@ -10,26 +14,26 @@ page-home {
     .container {
         margin:2rem 0;
     }
-    .row-container{
-        display: flex;
-        flex-direction: row;
-        height: 50%;
-        width: 100%;
-        .subject-container {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            height: 70%;
-            margin-bottom: 0%;
+    // .row-container{
+    //     display: flex;
+    //     flex-direction: row;
+    //     height: 50%;
+    //     width: 100%;
+    //     .subject-container {
+    //         align-items: center;
+    //         display: flex;
+    //         flex-direction: column;
+    //         width: 50%;
+    //         height: 70%;
+    //         margin-bottom: 0%;
         
-            .icon{
-                border-radius: 50%;
-                width: 70%;
-                height: 100%;
-            }
-        }
-    }
+    //         .icon{
+    //             border-radius: 50%;
+    //             width: 70%;
+    //             height: 100%;
+    //         }
+    //     }
+    // }
 
     .btn-Ver-mas {
         text-align: center;

@@ -1,39 +1,45 @@
-.scroll-content{
-    padding: 0;
+ion-title {
+    text-align: center
+}
 
-    .notifications-wrapper {
+page-notifications{
+    .scroll-content{
+        padding: 0;
 
-        .notification-container {
-            width: 100%;
-            background-color: rgb(196, 193, 193);
-            display: flex;
+        .notifications-wrapper {
 
-            div.img-container {
-                height: 100%;
-                width: 20%;
+            .notification-container {
+                width: 100%;
+                background-color: rgb(196, 193, 193);
+                display: flex;
 
-                .img-people {
-                    padding: 1rem;
-                    width: 100%;
-                }
-            }
+                div.img-container {
+                    height: 100%;
+                    width: 20%;
 
-            .notification-type {
-                position: relative;
-                width: 80%;
-                margin: 1.3rem 0;    
-            
-                .name-people {
-                   position: relative;
-                   display: inline;
-                   
+                    .img-people {
+                        padding: 1rem;
+                        width: 100%;
+                    }
                 }
 
-                .notification {
+                .notification-type {
+                    position: relative;
+                    width: 80%;
+                    margin: 1.3rem 0;    
+                
+                    .name-people {
                     position: relative;
                     display: inline;
-                    margin: 0;
+                    
+                    }
 
+                    .notification {
+                        position: relative;
+                        display: inline;
+                        margin: 0;
+
+                    }
                 }
             }
         }

@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 
 
-import { Subject } from '../../shared/Subject';
-import { SubjectService } from '../../shared/subject.service';
+import { General } from '../../shared/General';
+import { GeneralService } from '../../shared/general.service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
 
-  temas: Subject[] = [];
+export class HomePage implements OnInit {
+
+  temas: General[] = [];
   
   newTema: string = null;
 
@@ -25,8 +26,17 @@ export class HomePage {
 
     
   }];
-  constructor(public navCtrl: NavController) {
-
+  constructor(
+    public navCtrl: NavController, 
+    public generalesService: GeneralService
+  ) {  //lo que va en parentesis es para inyectar algo.
   }
 
+  ngOnInit() {
+    this.generalesService.getGenerales()
+    .subscribe(generales => {  //generales es la var que nosotros creamos
+      this.temas = generales;
+      console.log(this.temas); //para mostrar en la consola
+    })
+  }
 }
