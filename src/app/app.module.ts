@@ -15,7 +15,7 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
-import { MessagesPage } from '../pages/messages/messages';
+import { NotificationPage } from '../pages/notifications/notifications';
 import { SearchPage } from '../pages/search/search';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -28,7 +28,7 @@ import { QuestionsService } from '../shared/questions.service';
     MyApp,
     HomePage,
     ProfilePage,
-    MessagesPage,
+    NotificationPage,
     SearchPage,
     TabsPage
   ],
@@ -44,7 +44,7 @@ import { QuestionsService } from '../shared/questions.service';
     MyApp,
     HomePage,
     ProfilePage,
-    MessagesPage,
+    NotificationPage,
     SearchPage,
     TabsPage
   ],

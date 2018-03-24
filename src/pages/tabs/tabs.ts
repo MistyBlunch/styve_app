@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { ProfilePage } from '../profile/profile';
 import { HomePage } from '../home/home';
-import { MessagesPage } from '../messages/messages';
+import { NotificationPage } from '../notifications/notifications';
 import { SearchPage } from '../search/search';
 // import { FeedPage } from '../feed/feed';
 
@@ -13,7 +13,7 @@ export class TabsPage {
   
   HomeRoot = HomePage;
   ProfileRoot = ProfilePage;
-  MessagesRoot = MessagesPage;
+  NotificationRoot = NotificationPage;
   SearchRoot = SearchPage;
 //  tab3Root = FeedPage;
 

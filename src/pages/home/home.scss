@@ -8,7 +8,7 @@ page-home {
         padding: 20px;
 
     .container {
-        margin-bottom: 2rem;
+        margin:2rem 0;
     }
     .row-container{
         display: flex;
@@ -31,10 +31,8 @@ page-home {
         }
     }
 
-    .btn {
-        padding-left: 10.5rem;
-        padding-right: 10.5rem;
-
+    .btn-Ver-mas {
+        text-align: center;
     } 
     }
 }

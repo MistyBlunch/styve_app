@@ -17,7 +17,7 @@ import { TabsPage } from '../pages/tabs/tabs'; //me lleva al menu, search,etc
 })
 export class MyApp {
 
-  @ViewChild(Nav) nav: Nav
+  // @ViewChild(Nav) nav: Nav
 
   rootPage:any = TabsPage;
 

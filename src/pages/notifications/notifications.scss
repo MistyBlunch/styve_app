@@ -1,0 +1,41 @@
+.scroll-content{
+    padding: 0;
+
+    .notifications-wrapper {
+
+        .notification-container {
+            width: 100%;
+            background-color: rgb(196, 193, 193);
+            display: flex;
+
+            div.img-container {
+                height: 100%;
+                width: 20%;
+
+                .img-people {
+                    padding: 1rem;
+                    width: 100%;
+                }
+            }
+
+            .notification-type {
+                position: relative;
+                width: 80%;
+                margin: 1.3rem 0;    
+            
+                .name-people {
+                   position: relative;
+                   display: inline;
+                   
+                }
+
+                .notification {
+                    position: relative;
+                    display: inline;
+                    margin: 0;
+
+                }
+            }
+        }
+    }
+}
