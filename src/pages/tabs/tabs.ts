@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { ProfilePage } from '../profile/profile';
-import { HomePage } from '../home/home';
 import { NotificationPage } from '../notifications/notifications';
 import { SearchPage } from '../search/search';
 // import { FeedPage } from '../feed/feed';
@@ -11,7 +10,7 @@ import { SearchPage } from '../search/search';
 })
 export class TabsPage {
   
-  HomeRoot = HomePage;
+  // HomeRoot = HomePage;
   ProfileRoot = ProfilePage;
   NotificationRoot = NotificationPage;
   SearchRoot = SearchPage;

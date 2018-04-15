@@ -15,7 +15,7 @@ page-notifications{
 
                 div.img-container {
                     height: 100%;
-                    width: 20%;
+                    width: 30%;
 
                     .img-people {
                         padding: 1rem;
@@ -25,13 +25,11 @@ page-notifications{
 
                 .notification-type {
                     position: relative;
-                    width: 80%;
                     margin: 1.3rem 0;    
                 
                     .name-people {
                     position: relative;
-                    display: inline;
-                    
+                    display: inline; 
                     }
 
                     .notification {
@@ -40,6 +38,12 @@ page-notifications{
                         margin: 0;
 
                     }
+                }
+                .request-btn {
+                    padding: 0 2rem;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
                 }
             }
         }

@@ -1,18 +1,33 @@
-<ion-menu [content]="pagecontent">
-    <ion-content>
-      <ion-list>
-        <ion-item>
-          <button ion-button menuClose>Close Menu</button>
-        </ion-item>
-        <!-- <ion-item>
-          <button ion-button (click)="goToFeed()">Feed</button>
-        </ion-item> -->
-      </ion-list>
-    </ion-content>
-</ion-menu>
+<ion-header>
+  <ion-navbar>
+    <button ion-button (click)="logout()">
+      Logout
+    </button>
+  </ion-navbar>
+</ion-header>
 
-<ion-nav
-#pagecontent
-[root]="rootPage"
->
+<ion-nav #pagecontent [root]="rootPage" *ngIf="user!==null">
 </ion-nav>
+
+<ion-header *ngIf="user === null">
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding *ngIf="user === null">
+  <div class="welcome-wrapper">
+      <div class="styve-wrapper">
+        <h4 id="welcome">Welcome to ..</h4>
+        <h1 id="styve-title">Styve</h1>
+        <!-- <img src="../assets/logo/styveLogo.png" alt=""> -->
+      </div>
+
+      <button class="login-btn" ion-button (click)="login()">
+        Login with Google
+      </button> 
+      
+      <div class="styve-img">
+        <img src="../assets/logo/styve.png">
+      </div>
+  </div>
+</ion-content>
