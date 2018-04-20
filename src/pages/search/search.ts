@@ -12,10 +12,12 @@ import { CoursesService } from '../../shared/courses.service';
     courses: Array<any> = [];
     linkCourses: Array<any> = [];
     indexCoursesTope: number = 2;
+
     searchQuery: string = '';
     items: string[];
 
     constructor(public coursesService: CoursesService)  {
+      this.initializeItems();
     }
 
     ngOnInit() {
@@ -33,8 +35,30 @@ import { CoursesService } from '../../shared/courses.service';
       this.indexCoursesTope = this.indexCoursesTope + 3;
     }
 
+    initializeItems() {
+      this.items = [
+        'CSS',
+        'Float',
+        'Microncontroller',
+        'IoT',
+        'Arduino', 
+        'Flexbox',
+      ]
+    }
+
     getItems(ev: any) {
-      this.searchQuery = ev.target.value;
+      // Reset items back to all of the items
+      this.initializeItems();
+  
+      // set val to the value of the searchbar
+      let val = ev.target.value;
+  
+      // if the value is an empty string don't filter the items
+      if (val && val.trim() != '') {
+        this.items = this.items.filter((item) => {
+          return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        })
+      }
     }
 
   }

@@ -1,0 +1,23 @@
+page-edit-dashboard {
+  #ty {
+    margin-bottom: 2rem;
+    font-size: 15px;
+  }
+
+  .outer-content {
+    margin: 1rem auto;
+  }
+
+  #dash-btn {
+    display: flex;
+    justify-content: space-around;
+
+    .agree {
+      background-color: #9ACD32!important;
+    }
+  
+    .dismiss {
+      background-color: #fd3c3c!important;
+    }
+  }
+}

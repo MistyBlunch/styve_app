@@ -18,6 +18,9 @@ import { ProfilePage } from '../pages/profile/profile';
 import { NotificationPage } from '../pages/notifications/notifications';
 import { SearchPage } from '../pages/search/search';
 import { TabsPage } from '../pages/tabs/tabs';
+import { SettingsPage } from '../pages/settings/settings';
+
+// import { PopoverSocialMedia } from '../components/popover-socialmedia/popover-socialmedia';
 
 // para importar de general
 import { GeneralService } from '../shared/general.service';
@@ -30,7 +33,9 @@ import { CoursesService } from '../shared/courses.service';
     ProfilePage,
     NotificationPage,
     SearchPage,
-    TabsPage
+    TabsPage,
+    SettingsPage,
+    // PopoverSocialMedia
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,15 @@ import { CoursesService } from '../shared/courses.service';
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule, 
     AngularFireAuthModule
+    
+    // IonicModule.forRoot(MyApp,{
+    //   menuType: 'push',
+    //   platforms: {
+    //     ios: {
+    //       menuType: 'overlay',
+    //     }
+    //   }
+    // })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,7 +59,9 @@ import { CoursesService } from '../shared/courses.service';
     ProfilePage,
     NotificationPage,
     SearchPage,
-    TabsPage
+    TabsPage,
+    SettingsPage
+    // PopoverSocialMedia
   ],
   providers: [
     StatusBar,

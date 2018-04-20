@@ -1,3 +1,7 @@
+ion-menu {
+    height: 53px;
+}
+
 ion-title {
     text-align: center
 }
@@ -22,6 +26,11 @@ page-profile{
                     border-radius: 50%;
                 }
 
+                .item-inner{
+                    border-bottom: transparent !important;
+                    padding: 0 !important;
+                }
+
                 .profile-content {
                     display: flex;
                     flex-direction: column;
@@ -36,11 +45,18 @@ page-profile{
 
                     .star-level {
                         float: right;
-                    }
+                        direction: rtl;
+                        unicode-bidi: bidi-override;
+                        // background-color: brown;
 
-                    .item-inner{
-                        border-bottom: transparent !important;
-                        padding: 0 !important;
+                        .star-icon {
+                            color: black;
+                        }
+
+                        .star-icon:hover ~ .star-icon{
+                            color: yellow;
+                            transition: 0.1s;
+                        }
                     }
                 }
             }
@@ -75,6 +91,7 @@ page-profile{
                     background-color: rgb(199, 194, 194);
 
                     .courses-list {
+                        position: relative;
                         width: 100%;
                         padding: 1rem;
 
@@ -82,13 +99,14 @@ page-profile{
                             display: flex;
                             flex-direction: row;
                             width: 100%;
+                            justify-content: space-around;
 
                             .courses {
                                 width: 33.3%;
                                 display: flex;
                                 flex-direction: column;
                                 align-items: center;
-                                margin: 1rem;
+                                // margin: 1rem;
                                 padding: 1rem;
 
                                 .course-img {
@@ -123,6 +141,7 @@ page-profile{
                     }
 
                     .board-course {
+                        width: 80%;
                         display: flex;
                         flex-direction: column;
                         margin: 0 1.5rem 0 0;
@@ -186,6 +205,16 @@ page-profile{
                     }
                 }
             }
-        }   
+        } 
+        .outer-content {
+            margin: 3rem 0;
+            
+            ion-list:first-child {
+                margin-top: 32px;
+            }
+            ion-list + ion-list {
+                margin-top: 0;
+            }
+        }  
     }
 }

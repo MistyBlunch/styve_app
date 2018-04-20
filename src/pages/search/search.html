@@ -1,5 +1,8 @@
 <ion-header>
     <ion-navbar>
+        <button ion-button icon-only clear menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
       <ion-title>
         Tema
       </ion-title>
@@ -8,7 +11,11 @@
 
 <ion-content>
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-
+    <ion-list>
+    <ion-item *ngFor="let item of items">
+        {{ item }}
+    </ion-item>
+    </ion-list>
     <div class="levels-container">
         <div class="levels-row">
             <button class="levels" ion-button color="dark" clear>Beginner</button>

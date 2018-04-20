@@ -1,0 +1,20 @@
+.social-media-wrapper {
+  width: 80%;
+  height: auto;
+  background-color: rgb(226, 252, 174);
+
+  #social-media-title {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .social-media-contact-links {
+    display: flex;
+    justify-content: space-around;
+
+    .socialmedia {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

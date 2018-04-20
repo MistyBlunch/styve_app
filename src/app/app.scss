@@ -1,4 +1,6 @@
-
+.princ-wrapper {
+  background-color: rgb(241, 239, 239);
+}
   .welcome-wrapper{
     margin: 5% auto;
     text-align: center;
@@ -7,7 +9,7 @@
       margin-bottom: 10%;
 
       #welcome {
-        font-size: 20px;
+        font-size: 30px;
         font-family: cursive;
       }
 
@@ -16,10 +18,35 @@
         font-family: cursive;
         color: yellowgreen;
       }
+    }
 
-      .styve-img {
-        width: 80%;
+    .login-btn {
+      background-color: #DC4E41;
+      margin-bottom: 1rem;
+    }
 
-      }
+    .styve-img {
+      width: 100%;
+      margin: 3rem 0;
+    }
+
+    .quiz-wrapper {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+
+        #btn-quiz {
+          width: 25%;
+          background-color: yellowgreen;
+        }
+    }
+  }
+
+  .menuStyve {
+    height: auto;
+    overflow: hidden;
+
+    .list-menu-options {
+      margin: 20% auto;
     }
   }

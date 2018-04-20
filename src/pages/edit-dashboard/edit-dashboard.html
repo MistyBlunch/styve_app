@@ -1,0 +1,44 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>EditDashboard</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeEditDashboard()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h5 id="ty">Thanks for share your knowlegde :D</h5>
+    <div class="outer-content">
+        <ion-list>
+          <ion-item>
+            <ion-input placeholder="Title"></ion-input>
+          </ion-item>
+        </ion-list>
+      
+        <ion-list>
+          <ion-item>
+            <ion-label>Start Date</ion-label>
+            <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Start Time</ion-label>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
+          </ion-item>
+      
+          <!-- <ion-item>
+            <ion-label>Ends</ion-label>
+            <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeEnds"></ion-datetime>
+          </ion-item> -->
+        </ion-list>
+      </div>
+      <ion-buttons id="dash-btn">
+          <button ion-button class="agree">Aceptar</button>
+          <button ion-button class="dismiss" (click)="closeEditDashboard()">Cancelar</button>
+      </ion-buttons>
+</ion-content>

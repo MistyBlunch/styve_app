@@ -1,20 +1,108 @@
-<ion-header>
+<!-- user == null -->
+<ion-header *ngIf="user !== null">
   <ion-navbar>
+    <ion-title style="font-family: cursive;">Styve</ion-title>
+  </ion-navbar>
+  </ion-header>
+
+<ion-content *ngIf="user !== null" class="princ-wrapper">
+        <div class="welcome-wrapper">
+            <div class="styve-wrapper">
+              <h4 id="welcome">Welcome to ..</h4>
+              <h1 id="styve-title">Styve</h1>
+              <!-- <img src="../assets/logo/styveLogo.png" alt=""> -->
+            </div>
+      
+            <button class="login-btn" ion-button (click)="login()">
+              Login with Google
+            </button> 
+            
+            <div class="styve-img">
+              <img src="../assets/logo/styveLogo2.png">
+            </div>
+      
+            <div class="quiz-wrapper">
+              <button id="btn-quiz" ion-button block color="principal" (click)="doCheckbox()">Quiz</button>
+            </div>
+        </div>
+  </ion-content>
+  
+
+  <!-- user === user -->
+  <ion-content *ngIf="user === null">  
+    <ion-menu [content]="content" class="menuStyve" *ngIf="user === null">
+      <ion-content>      
+        <ion-header style="background-color:yellowgreen;;">
+          <ion-title>
+            <h2 style="font-family: cursive; color: #ffffff;">Styve</h2>
+          </ion-title>
+        </ion-header>
+        <!-- <ion-content>   -->
+          <ion-list class="list-menu-options">
+            <button class="boton4" ion-item (click)="openSettingsPage()">
+                <ion-icon ios="ios-settings" md="md-settings"></ion-icon>
+                Settings
+            </button>
+            <!-- prueba del popover(no es importante) -->
+            <button class="boton4" ion-item (click)="presentPopover($event)">
+                <ion-icon ios="ios-settings" md="md-settings"></ion-icon>
+                GG
+            </button>
+            <!-- aqui termina -->
+            <button ion-item (click)="logout()">
+              <ion-icon item-left ios="ios-log-out" md="md-log-out"></ion-icon>
+                  Logout
+            </button>
+            </ion-list>
+          </ion-content>
+      <!-- </ion-content> -->
+    </ion-menu>
+    <ion-nav #content [root]="rootPage"></ion-nav>
+  </ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ion-header >
+  <!-- <ion-navbar>
     <button ion-button (click)="logout()">
       Logout
     </button>
-  </ion-navbar>
+  </ion-navbar> -->
 </ion-header>
 
-<ion-nav #pagecontent [root]="rootPage" *ngIf="user!==null">
+<ion-content class="princ-wrapper" *ngIf="user !== null">
+
+</ion-content>
+
+<ion-nav #pagecontent [root]="rootPage" *ngIf="user===null">
+
 </ion-nav>
 
-<ion-header *ngIf="user === null">
-  <ion-navbar>
+<ion-header *ngIf="user !== null">  
+    <!-- *ngIf="user === null" -->
+  <!-- <ion-navbar>
     <ion-title>Login</ion-title>
-  </ion-navbar>
+  </ion-navbar> -->
 </ion-header>
-<ion-content padding *ngIf="user === null">
+
+<ion-content class="princ-wrapper">
   <div class="welcome-wrapper">
       <div class="styve-wrapper">
         <h4 id="welcome">Welcome to ..</h4>
@@ -27,7 +115,11 @@
       </button> 
       
       <div class="styve-img">
-        <img src="../assets/logo/styve.png">
+        <img src="../assets/logo/styveLogo2.png">
+      </div>
+
+      <div class="quiz-wrapper">
+        <button id="btn-quiz" ion-button block color="principal" (click)="doCheckbox()">Quiz</button>
       </div>
   </div>
 </ion-content>
