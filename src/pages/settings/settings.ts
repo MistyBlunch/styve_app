@@ -1,12 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Nav, Platform } from 'ionic-angular';
 
-/**
- * Generated class for the SettingsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ProfileEditPage } from '../../pages/profile-edit/profile-edit';
+
 
 @IonicPage()
 @Component({
@@ -14,6 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
+  @ViewChild(Nav) nav: Nav;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -22,4 +19,7 @@ export class SettingsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
+  openProfileEditPage() {
+    this.navCtrl.push(ProfileEditPage);
+  }
 }

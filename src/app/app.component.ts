@@ -6,6 +6,7 @@ import { GooglePlus } from '@ionic-native/google-plus';
 
 import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
+import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';

@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { CoursesService } from '../../shared/courses.service';
 
-
 @Component({
     selector: 'page-search',
     templateUrl: 'search.html'
