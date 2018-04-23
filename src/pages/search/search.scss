@@ -70,7 +70,8 @@ page-search{
                 
                 .courses-container {
                     width: 100%;
-                    margin: 2rem;
+                    
+                    margin: 2rem 0 !important;
                     display: flex;
                     flex-direction: column;
 
@@ -79,48 +80,59 @@ page-search{
                         margin-bottom: 1rem;
 
                         h6.course-title{
-                            font-size: 23px !important;
+                            font-size: 20px !important;
                         } 
 
-                        .courses {
-                            font-size: 16px;
-                            font-weight: 900;
-                        }
+                        // .courses {
+                        //     font-size: 16px;
+                        //     font-weight: 900;
+                        // }
 
-                        .question-options {
+                        .links-wrapper {
                             display: flex;
                             flex-direction: row;
+                            text-align: left;
                             width: 100%;
-
-                            .options {
+        
+                            .link {
                                 display: flex;
-                                justify-content: space-around;
-
-                                span.button-inner {
-                                    text-align: right;
+                                width: 60%;
+                                margin: 0;
+        
+                                #youtube-link {
+                                  margin: auto 1rem;
+                                  color: black;
+                        
+                                }
+        
+                                #youtube-icon {
+                                   margin: 0;
+                                }
+                            }
+                            .characters-course {
+                                display: flex;
+                                flex-direction: column;
+                                width: 40%;
+    
+                                h6.course-date {
+                                    margin: 0 !important;
                                 }
                             }
                         }
-                    }
-                }
+                        // .question-options {
+                        //     display: flex;
+                        //     flex-direction: row;
+                        //     width: 100%;
 
-                .links-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    text-align: left;
+                        //     .options {
+                        //         display: flex;
+                        //         justify-content: space-around;
 
-                    .link {
-                        display: flex;
-
-                        #youtube-link {
-                            line-height: 16px;
-                        }
-
-                        #youtube-icon {
-                            display: block;
-                            line-height: 16px;
-                            margin-right: 0.5rem;
-                        }
+                        //         span.button-inner {
+                        //             text-align: right;
+                        //         }
+                        //     }
+                        // }
                     }
                 }
             }

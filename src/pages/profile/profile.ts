@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { ModalController, PopoverController  } from 'ionic-angular';
 import { App, MenuController, ModalOptions } from 'ionic-angular';
 
+import { CoursesService } from '../../shared/courses.service'
+
 import { PopoverSocialMedia } from '../../components/popover-socialmedia/popover-socialmedia';
+import { LoginService } from '../../shared/login.service';
 
 @Component({
     selector: 'page-profile',
@@ -11,16 +14,33 @@ import { PopoverSocialMedia } from '../../components/popover-socialmedia/popover
   })
   
   export class ProfilePage {
-    constructor(public menuCtrl: MenuController, private modal: ModalController, public popoverCtrl: PopoverController) {}
+    courses: Array<any> = [];
+    linkCourses: Array<any> = [];
+    user: Object = {};
 
-    avatar: string = 'assets/img/joli3.jpg';
-    name: string = 'Lea Jolie';
+    constructor(
+      public menuCtrl: MenuController, 
+      private modal: ModalController, 
+      public popoverCtrl: PopoverController,
+      public coursesService: CoursesService,
+      private loginService: LoginService
+    ) {}
+
+    avatar: string = 'assets/imgs/girl3.png';
     level: string = 'Baby';
 
     public event = {
       month: '2018-04-13',
       timeStarts: '07:43',
       timeEnds: '1990-02-20'
+    }
+
+    ngOnInit() {
+      this.coursesService.getCourses().subscribe(courses => {
+        this.courses = courses;
+        console.log(courses);
+      });
+      this.user = this.loginService.getUser();
     }
 
     openEditDashboard() {

@@ -9,12 +9,15 @@
 
 
 <ion-content padding>
-    <ion-list>
-      <ion-item class="profile-edit">
-          <ion-avatar item-start>
-            <img src="../../assets/imgs/girl2.png">
-          </ion-avatar>
-        <h2>Mia Nuew</h2>
-      </ion-item>
-    </ion-list>
+  <div class="name-edit">
+      <ion-list>
+          <ion-item class="profile-edit">
+              <ion-avatar item-start color="secondary">
+                <img [src]="base64Image" *ngIf="base64Image" alt="">
+              </ion-avatar>
+            <h2>Mia Nuew</h2>
+          </ion-item>
+        </ion-list>
+      <button color="danger" id="edit-photo" ion-fab (click)="takePicture()"><ion-icon ios="ios-create" md="md-create"></ion-icon></button>
+  </div>
 </ion-content>

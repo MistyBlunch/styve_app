@@ -1,20 +1,27 @@
-.social-media-wrapper {
-  width: 80%;
-  height: auto;
-  background-color: rgb(226, 252, 174);
+ion-popover.popover-md.popover-bottom {
+  top: -30% !important;
+  left: -10%;
 
-  #social-media-title {
-    font-size: 16px;
-    text-align: center;
-  }
+  .social-media-wrapper {
+    width: auto;
+    height: auto;
+    background-color: rgb(226, 252, 174);
 
-  .social-media-contact-links {
-    display: flex;
-    justify-content: space-around;
+    #social-media-title {
+      font-size: 20px;
+      text-align: center;
+    }
 
-    .socialmedia {
+    .social-media-contact-links {
       display: flex;
-      flex-direction: row;
+      justify-content: space-around;
+      top: -10%;
+      width: 100%;
+
+      .socialmedia {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }

@@ -17,14 +17,14 @@
       <div class="profile">
         <ion-item>
           <ion-avatar item-start>
-            <img [src]="avatar">
+            <img src="../../assets/imgs/girl3.png">  <!-- [src]="avatar" -->
           </ion-avatar>
         </ion-item>
         <!-- <img class="profile-img" alt="Add image" src="https://vignette.wikia.nocookie.net/assassinscreed/images/c/c8/84875_add_512x512.png/revision/latest/scale-to-width-down/480?cb=20170830130518"> -->
         <div class="profile-content">
-          <h5 class="profile-name">{{ name }}</h5>
+          <h5 class="profile-name">{{ user.displayName }}</h5>
           <!-- <h6>Hi I can help you in Arduino and phyton Language, follow me on Youtube.</h6> -->
-          <ion-item>
+          <!-- <ion-item>
             <div class="star-level">
               <ion-icon class="star-icon" name="star" isActive="false"></ion-icon>
               <ion-icon class="star-icon" name="star" isActive="false"></ion-icon>
@@ -32,8 +32,7 @@
               <ion-icon class="star-icon" name="star" isActive="false"></ion-icon>
               <ion-icon class="star-icon" name="star" isActive="false"></ion-icon>
             </div>
-            <!-- <p>{{ level }}</p> LEVEL se encuentra en .ts -->
-          </ion-item>
+          </ion-item> -->
           <!-- <p id="level-name">{{ level }}</p>  "Baby" -->
         </div>
       </div>
@@ -122,6 +121,9 @@
                   </div>
                   <div class="description-link">
                     <a class="board-link" href="#">arduino miraaaaa</a> 
+                  </div>
+                  <div class="members">
+                    <p>{{members}}</p>
                   </div>
                 </div>
               </div>

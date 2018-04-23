@@ -1,3 +1,11 @@
 page-profile-edit {
-
+  .name-edit {
+    display: flex;
+    justify-content: space-between;
+    
+    #edit-photo {
+      width: 4rem !important;
+      height: 4rem;
+    }
+  }
 }

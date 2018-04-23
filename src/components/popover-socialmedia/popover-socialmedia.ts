@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'popover',
-  templateUrl: 'popover.html'
+  templateUrl: 'popover-socialmedia.html'
 })
 export class PopoverSocialMedia {
 

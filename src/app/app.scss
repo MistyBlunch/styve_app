@@ -1,46 +1,41 @@
-.princ-wrapper {
-  background-color: rgb(241, 239, 239);
-}
-  .welcome-wrapper{
-    margin: 5% auto;
-    text-align: center;
+.slide-wrapper {
+  // background-color: rgb(241, 239, 239);
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-    .styve-wrapper {
-      margin-bottom: 10%;
+  .styve-title {
+    color:yellowgreen; 
+    font-size: 40px; 
+    font-family: 'Roboto', sans-serif;
+  }
 
-      #welcome {
-        font-size: 30px;
-        font-family: cursive;
-      }
+  .styve-img {
+    width: 100%;
+    margin: 3rem 0;
+  }
 
-      #styve-title {
-        font-size: 100px;
-        font-family: cursive;
-        color: yellowgreen;
-      }
-    }
-
+  .login-wrapper {
     .login-btn {
       background-color: #DC4E41;
       margin-bottom: 1rem;
-    }
-
-    .styve-img {
-      width: 100%;
-      margin: 3rem 0;
+      text-transform: none;
+      font-size: 20px;
     }
 
     .quiz-wrapper {
       margin: 0 auto;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
 
         #btn-quiz {
           width: 25%;
           background-color: yellowgreen;
+          margin: 0 auto;
+          text-transform: none;
+          font-size: 20px;
         }
     }
   }
+}
 
   .menuStyve {
     height: auto;

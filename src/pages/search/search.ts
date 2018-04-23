@@ -7,16 +7,17 @@ import { CoursesService } from '../../shared/courses.service';
     selector: 'page-search',
     templateUrl: 'search.html'
   })
+
   export class SearchPage implements OnInit{
     courses: Array<any> = [];
-    linkCourses: Array<any> = [];
+    topicLink: Array<any> = [];
     indexCoursesTope: number = 2;
-
+// para el searchbar:
     searchQuery: string = '';
     items: string[];
 
     constructor(public coursesService: CoursesService)  {
-      this.initializeItems();
+      this.initializeItems();  //searchbar
     }
 
     ngOnInit() {
@@ -34,14 +35,18 @@ import { CoursesService } from '../../shared/courses.service';
       this.indexCoursesTope = this.indexCoursesTope + 3;
     }
 
+    // heartsCount() {
+    //   this.
+    // }
+
     initializeItems() {
       this.items = [
-        'CSS',
-        'Float',
-        'Microncontroller',
-        'IoT',
-        'Arduino', 
-        'Flexbox',
+        // 'CSS',
+        // 'Float',
+        // 'Microncontroller',
+        // 'IoT',
+        // 'Arduino', 
+        // 'Flexbox',
       ]
     }
 

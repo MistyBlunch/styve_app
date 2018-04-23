@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, ViewController } from 'ionic-angular';
+import { CoursesService } from '../../shared/courses.service';
+import { AlertController } from 'ionic-angular';
+
 @IonicPage()
 @Component({
   selector: 'page-edit-dashboard',
@@ -7,21 +10,61 @@ import { IonicPage, NavParams, ViewController } from 'ionic-angular';
 })
 export class EditDashboardPage {
 
-  constructor(private navParams: NavParams, private view: ViewController) {
+  courses: Array<Object> = [];
+  event = {
+    date: '2018-04-13',
+    timeStarts: '07:43',
+    timeEnds: '1990-02-20',
+    selectedCourseKey: null,
+    title: null
   }
+
+  constructor(
+    private navParams: NavParams, 
+    private view: ViewController, 
+    private alertCtrl: AlertController,
+    private coursesService: CoursesService) {
+  } 
 
   closeEditDashboard() {
     this.view.dismiss();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EditDashboardPage');
+    this.coursesService.getCourses().subscribe(courses => {
+      this.courses = courses.map(c => ({
+        value: c.key,
+        label: c.name,
+        type: 'radio'
+      }));
+    })
+  }  
+
+  presentPrompt() {
+    let alert = this.alertCtrl.create({
+      title: 'selecciona un curso',
+      inputs: this.courses,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'OK',
+          handler: key => {
+            this.event.selectedCourseKey = key;
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
-  public event = {
-    month: '2018-04-13',
-    timeStarts: '07:43',
-    timeEnds: '1990-02-20'
+  saveEvent(): void {
+    this.coursesService.addCourseTopic(
+      this.event
+    ).then(result => {
+      this.view.dismiss();
+    });
   }
-
 }

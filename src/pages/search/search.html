@@ -16,7 +16,8 @@
         {{ item }}
     </ion-item>
     </ion-list>
-    <div class="levels-container">
+    <!-- Menu of Beginner/Advanced -->
+    <!-- <div class="levels-container">
         <div class="levels-row">
             <button class="levels" ion-button color="dark" clear>Beginner</button>
         </div>
@@ -26,7 +27,7 @@
         <div class="levels-row">
             <button class="levels" ion-button color="dark" clear>Avanced</button>
         </div>
-    </div>
+    </div> -->
 
     <div class="courses-container">
         
@@ -38,13 +39,13 @@
                         <h6 class="person-name">
                             {{ topic.respName }}
                         </h6>
-                        <div class="star-level">
+                        <!-- <div class="star-level">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -52,9 +53,22 @@
                     <div class="courses-container" *ngFor="let topic of course.topics">
                         <div class="course-wrapper">
                             <h6 class="course-title">{{ topic.topicName }}</h6>
-                            <div class="question-options">
+                            <div class="links-wrapper">
+                                <div class="link">
+                                    <img id="youtube-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTEuMTQ3IDUxMS4xNDciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMS4xNDcgNTExLjE0NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxIDEpIj4KCTxnPgoJCTxnPgoJCQk8cGF0aCBkPSJNNTA1LjAyNywxNDYuMmMwLTEuNzA3LTUuMTItMzkuMjUzLTIxLjMzMy01Ny4xNzNjLTE5LjYyNy0yMS4zMzMtNDAuOTYtMjMuODkzLTUyLjA1My0yNC43NDdoLTMuNDEzICAgICBjLTY5LjEyLTUuMTItMTcyLjM3My01Ljk3My0xNzQuMDgtNS45NzNjLTAuODUzLDAtMTA0Ljk2LDAuODUzLTE3My4yMjcsNy42OGgtMi41NkM2Ni40MTMsNjYuODQsNDUuMDgsNjkuNCwyNi4zMDcsOTAuNzMzICAgICBDOS4yNCwxMDguNjUzLDQuMTIsMTQ3LjA1Myw0LjEyLDE0OC43NmMwLDAtNS4xMiw0My41Mi01LjEyLDg3LjA0djQwLjEwN2MwLDQyLjY2Nyw1LjEyLDg2LjE4Nyw1LjEyLDg3LjA0ICAgICBjMCwxLjcwNyw1LjEyLDM5LjI1MywyMS4zMzMsNTcuMTczYzE3LjkyLDIwLjQ4LDM5LjI1MywyMy4wNCw1Mi45MDcsMjQuNzQ3YzIuNTYsMCw0LjI2NywwLDYuODI3LDAuODUzICAgICBjMzkuMjUzLDMuNDEzLDE2My44NCw1LjEyLDE2OC45Niw1LjEyYzAuODUzLDAsMTA0Ljk2LDAsMTc0LjA4LTcuNjhoMi41NmMxMS45NDctMC44NTMsMzMuMjgtMy40MTMsNTIuMDUzLTI0Ljc0NyAgICAgYzE3LjA2Ny0xNy45MiwyMi4xODctNTYuMzIsMjIuMTg3LTU4LjAyN2MwLDAsNS4xMi00My41Miw1LjEyLTg3LjA0VjIzMy4yNEM1MTAuMTQ3LDE5MC41NzMsNTA1LjAyNywxNDcuMDUzLDUwNS4wMjcsMTQ2LjJ6ICAgICAgTTQ5My4wOCwyNzUuMDUzYzAsNDIuNjY3LTUuMTIsODUuMzMzLTUuMTIsODUuMzMzYy0xLjcwNyw5LjM4Ny02LjgyNywzNi42OTMtMTcuOTIsNDguNjQgICAgIGMtMTQuNTA3LDE3LjA2Ny0zMS41NzMsMTguNzczLTQwLjk2LDE5LjYyN2gtMi41NmMtNjguMjY3LDUuMTItMTcxLjUyLDUuMTItMTcyLjM3Myw1LjEycy0xMjguODUzLTEuNzA3LTE2Ni40LTUuOTczICAgICBjLTIuNTYsMC01LjEyLTAuODUzLTcuNjgtMC44NTNjLTExLjk0Ny0wLjg1My0yOS4wMTMtMy40MTMtNDIuNjY3LTE4Ljc3M2MtMTAuMjQtMTEuMDkzLTE2LjIxMy0zOC40LTE3LjA2Ny00Ny43ODcgICAgIGMwLTAuODUzLTUuMTItNDMuNTItNS4xMi04NS4zMzN2LTQwLjEwN2MwLTQyLjY2Nyw1LjEyLTg1LjMzMyw1LjEyLTg1LjMzM2MwLjg1My05LjM4Nyw2LjgyNy0zNi42OTMsMTcuMDY3LTQ4LjY0ICAgICBDNTIuNzYsODMuOTA3LDY4Ljk3Myw4Mi4yLDc5LjIxMyw4MS4zNDdoMi41NmM2OC4yNjctNS4xMiwxNzEuNTItNS45NzMsMTcyLjM3My01Ljk3M3MxMDQuMTA3LDAuODUzLDE3Mi4zNzMsNS45NzNoMy40MTMgICAgIGM5LjM4NywwLjg1MywyNi40NTMsMi41Niw0MC45NiwxOS42MjdjMTAuMjQsMTEuOTQ3LDE1LjM2LDM5LjI1MywxNy4wNjcsNDguNjRjMC44NTMsMS43MDcsNS4xMiw0NC4zNzMsNS4xMiw4NS4zMzNWMjc1LjA1M3oiIGZpbGw9IiMwMDAwMDAiLz4KCQkJPHBhdGggZD0iTTM2MC44MTMsMjU1LjQyN2wtMTYyLjEzMy05NC43MmMtMi41Ni0xLjcwNy01Ljk3My0xLjcwNy04LjUzMywwcy00LjI2Nyw0LjI2Ny00LjI2Nyw3LjY4VjM1My41NiAgICAgYzAsMy40MTMsMS43MDcsNS45NzMsNC4yNjcsNy42OGMxLjcwNywwLjg1MywyLjU2LDAuODUzLDQuMjY3LDAuODUzczIuNTYsMCw0LjI2Ny0wLjg1M2wxNjIuMTMzLTkwLjQ1MyAgICAgYzIuNTYtMS43MDcsNC4yNjctNC4yNjcsNC4yNjctNy42OFMzNjMuMzczLDI1Ny4xMzMsMzYwLjgxMywyNTUuNDI3eiBNMjAyLjk0NywzMzkuMDUzdi0xNTYuMTZsMTM2LjUzMyw4MC4yMTNMMjAyLjk0NywzMzkuMDUzeiAgICAgIiBmaWxsPSIjMDAwMDAwIi8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="/>
+                                    <a id="youtube-link" [href]="topic.topicLink" target="_blank">
+                                        {{ topic.topicLink }}
+                                    </a>
+                                </div>
+                                <div class="characters-course">
+                                    <h6 class="course-date">{{ topic.date }}</h6>
+                                    <h6 class="course-date">{{ topic.timeStarts }}</h6>
+                                </div>
+                            </div>
+                            
+                            <!-- <div class="question-options">
                                 <div class="options">
-                                    <button ion-button color="dark" clear icon-only>
+                                    <button ion-button color="dark" (click)="heartsCount()" clear icon-only>
                                         <ion-icon name='heart' is-active="false"></ion-icon>
                                     </button>
                                 </div>
@@ -68,25 +82,15 @@
                                         <ion-icon name='close' is-active="false"></ion-icon>
                                     </button>
                                 </div>
-                            </div>
+                            </div> -->
                         </div> 
-
-                        <div class="links-wrapper">
-                            <div class="link">
-                                <img id="youtube-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTEuMTQ3IDUxMS4xNDciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMS4xNDcgNTExLjE0NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxIDEpIj4KCTxnPgoJCTxnPgoJCQk8cGF0aCBkPSJNNTA1LjAyNywxNDYuMmMwLTEuNzA3LTUuMTItMzkuMjUzLTIxLjMzMy01Ny4xNzNjLTE5LjYyNy0yMS4zMzMtNDAuOTYtMjMuODkzLTUyLjA1My0yNC43NDdoLTMuNDEzICAgICBjLTY5LjEyLTUuMTItMTcyLjM3My01Ljk3My0xNzQuMDgtNS45NzNjLTAuODUzLDAtMTA0Ljk2LDAuODUzLTE3My4yMjcsNy42OGgtMi41NkM2Ni40MTMsNjYuODQsNDUuMDgsNjkuNCwyNi4zMDcsOTAuNzMzICAgICBDOS4yNCwxMDguNjUzLDQuMTIsMTQ3LjA1Myw0LjEyLDE0OC43NmMwLDAtNS4xMiw0My41Mi01LjEyLDg3LjA0djQwLjEwN2MwLDQyLjY2Nyw1LjEyLDg2LjE4Nyw1LjEyLDg3LjA0ICAgICBjMCwxLjcwNyw1LjEyLDM5LjI1MywyMS4zMzMsNTcuMTczYzE3LjkyLDIwLjQ4LDM5LjI1MywyMy4wNCw1Mi45MDcsMjQuNzQ3YzIuNTYsMCw0LjI2NywwLDYuODI3LDAuODUzICAgICBjMzkuMjUzLDMuNDEzLDE2My44NCw1LjEyLDE2OC45Niw1LjEyYzAuODUzLDAsMTA0Ljk2LDAsMTc0LjA4LTcuNjhoMi41NmMxMS45NDctMC44NTMsMzMuMjgtMy40MTMsNTIuMDUzLTI0Ljc0NyAgICAgYzE3LjA2Ny0xNy45MiwyMi4xODctNTYuMzIsMjIuMTg3LTU4LjAyN2MwLDAsNS4xMi00My41Miw1LjEyLTg3LjA0VjIzMy4yNEM1MTAuMTQ3LDE5MC41NzMsNTA1LjAyNywxNDcuMDUzLDUwNS4wMjcsMTQ2LjJ6ICAgICAgTTQ5My4wOCwyNzUuMDUzYzAsNDIuNjY3LTUuMTIsODUuMzMzLTUuMTIsODUuMzMzYy0xLjcwNyw5LjM4Ny02LjgyNywzNi42OTMtMTcuOTIsNDguNjQgICAgIGMtMTQuNTA3LDE3LjA2Ny0zMS41NzMsMTguNzczLTQwLjk2LDE5LjYyN2gtMi41NmMtNjguMjY3LDUuMTItMTcxLjUyLDUuMTItMTcyLjM3Myw1LjEycy0xMjguODUzLTEuNzA3LTE2Ni40LTUuOTczICAgICBjLTIuNTYsMC01LjEyLTAuODUzLTcuNjgtMC44NTNjLTExLjk0Ny0wLjg1My0yOS4wMTMtMy40MTMtNDIuNjY3LTE4Ljc3M2MtMTAuMjQtMTEuMDkzLTE2LjIxMy0zOC40LTE3LjA2Ny00Ny43ODcgICAgIGMwLTAuODUzLTUuMTItNDMuNTItNS4xMi04NS4zMzN2LTQwLjEwN2MwLTQyLjY2Nyw1LjEyLTg1LjMzMyw1LjEyLTg1LjMzM2MwLjg1My05LjM4Nyw2LjgyNy0zNi42OTMsMTcuMDY3LTQ4LjY0ICAgICBDNTIuNzYsODMuOTA3LDY4Ljk3Myw4Mi4yLDc5LjIxMyw4MS4zNDdoMi41NmM2OC4yNjctNS4xMiwxNzEuNTItNS45NzMsMTcyLjM3My01Ljk3M3MxMDQuMTA3LDAuODUzLDE3Mi4zNzMsNS45NzNoMy40MTMgICAgIGM5LjM4NywwLjg1MywyNi40NTMsMi41Niw0MC45NiwxOS42MjdjMTAuMjQsMTEuOTQ3LDE1LjM2LDM5LjI1MywxNy4wNjcsNDguNjRjMC44NTMsMS43MDcsNS4xMiw0NC4zNzMsNS4xMiw4NS4zMzNWMjc1LjA1M3oiIGZpbGw9IiMwMDAwMDAiLz4KCQkJPHBhdGggZD0iTTM2MC44MTMsMjU1LjQyN2wtMTYyLjEzMy05NC43MmMtMi41Ni0xLjcwNy01Ljk3My0xLjcwNy04LjUzMywwcy00LjI2Nyw0LjI2Ny00LjI2Nyw3LjY4VjM1My41NiAgICAgYzAsMy40MTMsMS43MDcsNS45NzMsNC4yNjcsNy42OGMxLjcwNywwLjg1MywyLjU2LDAuODUzLDQuMjY3LDAuODUzczIuNTYsMCw0LjI2Ny0wLjg1M2wxNjIuMTMzLTkwLjQ1MyAgICAgYzIuNTYtMS43MDcsNC4yNjctNC4yNjcsNC4yNjctNy42OFMzNjMuMzczLDI1Ny4xMzMsMzYwLjgxMywyNTUuNDI3eiBNMjAyLjk0NywzMzkuMDUzdi0xNTYuMTZsMTM2LjUzMyw4MC4yMTNMMjAyLjk0NywzMzkuMDUzeiAgICAgIiBmaWxsPSIjMDAwMDAwIi8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="/>
-                                <a id="youtube-link" href="#">{{ topic.topicLink }}</a>
-                            </div>
-                        </div>
                     </div>  
                 </div>    
             </div>
         </div>
-
-       
-
     </div>
 
     <div class="btn-Ver-mas">
-        <button ion-button color="secondary" round>Ver Mas</button>
+        <button ion-button color="secondary" (click)="aumentarIndexCoursesTope()" round>Ver Mas</button>
     </div>
 </ion-content>

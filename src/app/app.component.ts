@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
+import { Platform, Nav, Slides  } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GooglePlus } from '@ionic-native/google-plus';
@@ -7,9 +7,6 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
 import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
-
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 
 import { TabsPage } from '../pages/tabs/tabs'; //me lleva al menu, search,etc
 import { ProfilePage } from '../pages/profile/profile';
@@ -19,12 +16,16 @@ import { ProfilePage } from '../pages/profile/profile';
 //para el cuestionario
 import { AlertController } from 'ionic-angular';
 
+import { LoginService } from '../shared/login.service';
+
 @Component({
   templateUrl: 'app.html'
 })
 
 export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
+  @ViewChild(Slides) slides: Slides;
+
   rootPage:any = TabsPage;  //es TabsPage
   user = null;
   testCheckboxOpen: boolean;
@@ -34,9 +35,8 @@ export class MyApp implements OnInit {
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
-    public afAuth: AngularFireAuth,
-    public alertCtrl: AlertController, //cuestionario
-    private googlePlus: GooglePlus
+    public alertCtrl: AlertController, 
+    private loginService: LoginService
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -47,25 +47,32 @@ export class MyApp implements OnInit {
   }
 
   ngOnInit(): void {
-    this.googlePlus.trySilentLogin(user=> this.user = user);
+    
   }
 
+
   login() {
-    this.googlePlus.login({
-      'offline' : true
-    }).then(res => {
-        this.user = res; 
-    }, err => alert('error'));
+    this.loginService.login().then(user => {
+      this.user = user;
+    });
   }
 
   logout() {
-    this.googlePlus.logout().then(() => this.user = null);
+    this.loginService.logout()
+      .then(() => this.user = null);
   }
 
   openSettingsPage() {
     this.nav.push(SettingsPage);
   }
 
+  goToSlide() {
+    this.slides.slideTo(2, 500);
+  }
+
+  // closeMenu() {
+  //   this.dimiss();
+  // }
 
 //cuestionario
 doCheckbox() {
