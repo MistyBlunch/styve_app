@@ -1,51 +1,85 @@
-ion-title {
-    text-align: center
-}
+.scroll-content {
+    overflow: hidden;
 
-page-notifications{
-    .scroll-content{
-        padding: 0;
+    .scroll-content {
+        overflow: scrolL;
+        
+        ion-title {
+            text-align: center
+        }
+        .card-background-page {
+            width: 80%;
+            margin: 0 auto;
 
-        .notifications-wrapper {
+            ion-card {
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+            }
 
-            .notification-container {
+                .card-title {
+                position: absolute;
+                top: 36%;
+                font-size: 2.0em;
                 width: 100%;
-                background-color: rgb(196, 193, 193);
-                display: flex;
-
-                div.img-container {
-                    height: 100%;
-                    width: 30%;
-
-                    .img-people {
-                        padding: 1rem;
-                        width: 100%;
-                    }
+                font-weight: bold;
+                color: #fff;
                 }
-
-                .notification-type {
-                    position: relative;
-                    margin: 1.3rem 0;    
-                
-                    .name-people {
-                    position: relative;
-                    display: inline; 
-                    }
-
-                    .notification {
-                        position: relative;
-                        display: inline;
-                        margin: 0;
-
-                    }
-                }
-                .request-btn {
-                    padding: 0 2rem;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
+            
+                .card-subtitle {
+                font-size: 1.0em;
+                position: absolute;
+                top: 52%;
+                width: 100%;
+                color: #fff;
                 }
             }
-        }
+        // page-notifications{
+        //     .scroll-content{
+        //         padding: 0;
+
+        //         .notifications-wrapper {
+
+        //             .notification-container {
+        //                 width: 100%;
+        //                 background-color: rgb(196, 193, 193);
+        //                 display: flex;
+
+        //                 div.img-container {
+        //                     height: 100%;
+        //                     width: 30%;
+
+        //                     .img-people {
+        //                         padding: 1rem;
+        //                         width: 100%;
+        //                     }
+        //                 }
+
+        //                 .notification-type {
+        //                     position: relative;
+        //                     margin: 1.3rem 0;    
+                        
+        //                     .name-people {
+        //                     position: relative;
+        //                     display: inline; 
+        //                     }
+
+        //                     .notification {
+        //                         position: relative;
+        //                         display: inline;
+        //                         margin: 0;
+
+        //                     }
+        //                 }
+        //                 .request-btn {
+        //                     padding: 0 2rem;
+        //                     display: flex;
+        //                     flex-direction: row;
+        //                     justify-content: space-between;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
 }

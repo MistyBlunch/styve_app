@@ -1,23 +1,18 @@
-
 <ion-header>
   <ion-navbar color="yellowgreen">
       <button ion-button icon-only clear menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <!-- <button ion-button icon-only menuToggle color="white">
-        <ion-icon name='menu'></ion-icon>
-      </button> -->
       <ion-title>Profile</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
     <div class="container profile-page">
       <div class="profile">
         <ion-item>
           <ion-avatar item-start>
-            <img src="../../assets/imgs/girl3.png">  <!-- [src]="avatar" -->
+            <img [src]="user.imageUrl">  <!-- [src]="avatar" -->
           </ion-avatar>
         </ion-item>
         <!-- <img class="profile-img" alt="Add image" src="https://vignette.wikia.nocookie.net/assassinscreed/images/c/c8/84875_add_512x512.png/revision/latest/scale-to-width-down/480?cb=20170830130518"> -->
@@ -36,12 +31,12 @@
           <!-- <p id="level-name">{{ level }}</p>  "Baby" -->
         </div>
       </div>
-      <div class="profile-options">
+      <!-- <div class="profile-options">
         <div class="botones">
           <button class="boton-opcion" ion-button color="dark" outline (click)="pushdashboard()">See the board</button>
-          <button class="boton-opcion" ion-button color="secondary" outline>Connect</button>
+          <button class="boton-opcion" ion-button color="secondary" outline (click)="presentPopover($event)">Connect</button>
         </div>
-      </div>
+      </div> -->
       <!-- <div class="medals">
   
       </div> -->
@@ -100,33 +95,35 @@
         </div>
       </div> -->
       <!-- <ion-content> -->
-        <div class="boards-wrapper">
+        <div class="boards-wrapper" *ngFor="let course of getInitialCourses()">
+
             <ion-fab right edge>
                 <button ion-fab color="vibrant" mini><ion-icon name="add"></ion-icon></button>
                 <ion-fab-list>
                   <button ion-fab (click)="openEditDashboard()"><ion-icon name="create"></ion-icon></button>
-                  <button ion-fab><ion-icon name="share"></ion-icon></button>
-                  <button ion-fab><ion-icon name="trash"></ion-icon></button>
+                  <!-- <button ion-fab><ion-icon name="share"></ion-icon></button>
+                  <button ion-fab><ion-icon name="trash"></ion-icon></button> -->
                 </ion-fab-list>
               </ion-fab>
             <h6 class="my-board" style="text-align: center; margin: 3rem 2rem 0 2rem; font-size: 24px;">My Board</h6>
-          <div class="board-content">
+          <div class="board-content" *ngFor="let topic of course.topics">
               <img class="img-board" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDUyLDQwaC0yNFYwaC00MHY0MEgxMjRWMEg4NHY0MEg2MEMyNi45MTYsNDAsMCw2Ni45MTYsMCwxMDB2MzUyYzAsMzMuMDg0LDI2LjkxNiw2MCw2MCw2MGgzOTIgICAgYzMzLjA4NCwwLDYwLTI2LjkxNiw2MC02MFYxMDBDNTEyLDY2LjkxNiw0ODUuMDg0LDQwLDQ1Miw0MHogTTQ3Miw0NTJjMCwxMS4wMjgtOC45NzIsMjAtMjAsMjBINjBjLTExLjAyOCwwLTIwLTguOTcyLTIwLTIwVjE4OCAgICBoNDMyVjQ1MnogTTQ3MiwxNDhINDB2LTQ4YzAtMTEuMDI4LDguOTcyLTIwLDIwLTIwaDI0djQwaDQwVjgwaDI2NHY0MGg0MFY4MGgyNGMxMS4wMjgsMCwyMCw4Ljk3MiwyMCwyMFYxNDh6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cmVjdCB4PSI3NiIgeT0iMjMwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxyZWN0IHg9IjE1NiIgeT0iMjMwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxyZWN0IHg9IjIzNiIgeT0iMjMwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxyZWN0IHg9IjMxNiIgeT0iMjMwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxyZWN0IHg9IjM5NiIgeT0iMjMwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxyZWN0IHg9Ijc2IiB5PSIzMTAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMTU2IiB5PSIzMTAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMjM2IiB5PSIzMTAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMzE2IiB5PSIzMTAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iNzYiIHk9IjM5MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cmVjdCB4PSIxNTYiIHk9IjM5MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cmVjdCB4PSIyMzYiIHk9IjM5MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cmVjdCB4PSIzMTYiIHk9IjM5MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cmVjdCB4PSIzOTYiIHk9IjMxMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="/>
               <div class="board-course">
-                <h6 class="board-title">Introducción a Arduino</h6>
+                <h6 class="board-title">{{ topic.topicName }}</h6>
                 <div class="board-description">
                   <div class="description-title">
-                    <h6 class="board-date"> 11/03/2018</h6>
-                    <h6 class="board-time">20:00</h6>
+                    <h6 class="board-date">{{ topic.date }}</h6>
+                    <h6 class="board-time">{{ topic.timeStarts }}</h6>
                   </div>
                   <div class="description-link">
-                    <a class="board-link" href="#">arduino miraaaaa</a> 
+                    <a class="board-link" href="#">{{ topic.topicLink }}</a> 
                   </div>
-                  <div class="members">
+                  <!-- <div class="members">
                     <p>{{members}}</p>
-                  </div>
+                  </div> -->
                 </div>
               </div>
+              <hr style="color: yellow;">
           </div>
         </div>
   

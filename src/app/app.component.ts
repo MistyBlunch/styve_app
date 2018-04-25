@@ -10,6 +10,9 @@ import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 
 import { TabsPage } from '../pages/tabs/tabs'; //me lleva al menu, search,etc
 import { ProfilePage } from '../pages/profile/profile';
+import { UploadLinksPage } from '../pages/upload-links/upload-links';
+
+
 
 // import { PopoverSocialMedia } from '../components/popover-socialmedia/popover-socialmedia';
 
@@ -36,7 +39,8 @@ export class MyApp implements OnInit {
     statusBar: StatusBar,
     splashScreen: SplashScreen,
     public alertCtrl: AlertController, 
-    private loginService: LoginService
+    private loginService: LoginService,
+    private googlePlus: GooglePlus
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -51,6 +55,13 @@ export class MyApp implements OnInit {
   }
 
 
+  // login() {
+  //   this.googlePlus.login({
+  //     'offline': true
+  //   }).then(res => {
+  //     this.user =res;
+  //   }, err => alert('error'));
+  // }
   login() {
     this.loginService.login().then(user => {
       this.user = user;
@@ -64,6 +75,10 @@ export class MyApp implements OnInit {
 
   openSettingsPage() {
     this.nav.push(SettingsPage);
+  }
+
+  openUploadLinksPage() {
+    this.nav.push(UploadLinksPage);
   }
 
   goToSlide() {

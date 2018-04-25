@@ -1,0 +1,14 @@
+page-upload-links {
+  #update-links-btn {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    .agree {
+      background-color: #9ACD32!important;
+    }
+
+    .dismiss {
+      background-color: #fd3c3c!important;
+    }
+  }
+}

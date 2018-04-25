@@ -1,21 +1,19 @@
 
 <ion-header>
-
   <ion-navbar>
-    <ion-title>ProfileEditPage</ion-title>
+    <ion-title>Edit Profile</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <div class="name-edit">
       <ion-list>
           <ion-item class="profile-edit">
-              <ion-avatar item-start color="secondary">
+              <ion-avatar item-start>
+                <img [src]="user.imageUrl">
                 <img [src]="base64Image" *ngIf="base64Image" alt="">
               </ion-avatar>
-            <h2>Mia Nuew</h2>
+            <h2>{{ user.displayName }}</h2>
           </ion-item>
         </ion-list>
       <button color="danger" id="edit-photo" ion-fab (click)="takePicture()"><ion-icon ios="ios-create" md="md-create"></ion-icon></button>

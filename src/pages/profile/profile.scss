@@ -79,6 +79,44 @@ page-profile{
                     .boton-opcion {
                         margin-left: 2rem;
                     
+                        ion-popover.popover-md.popover-bottom {
+                            top: -30% !important;
+                            left: -10%;
+                          
+                            .social-media-wrapper {
+                              width: auto;
+                              height: auto;
+                              background-color: rgb(226, 252, 174);
+                          
+                              #social-media-title {
+                                font-size: 20px;
+                                text-align: center;
+                                margin-top: 0;
+                              }
+                          
+                              .social-media-contact-links {
+                                display: flex;
+                                flex-direction: column;
+                                top: -10%;
+                                width: 100%;
+                          
+                                .socialmedia {
+                                  display: flex;
+                                  flex-direction: column;
+                                  margin: 1rem auto;
+                          
+                                  .link {
+                                    color: #000000 !important;
+                                    margin: 0 !important;
+                                  }
+                          
+                                  #number {
+                                    margin: 0 !important;
+                                  }
+                                }
+                              }
+                            }
+                          }
                     }
                 }
             }
@@ -141,14 +179,14 @@ page-profile{
                     }
 
                     .board-course {
-                        width: 80%;
+                        width: 70%;
                         display: flex;
                         flex-direction: column;
                         margin: 0 1.5rem 0 0;
 
                         .board-title {
                             margin-left: 0.5rem;
-                            font-size: 20px;
+                            font-size: 18px;
                             font-weight: 600;
                             text-align: right;
                         }
@@ -167,10 +205,12 @@ page-profile{
                                 .board-date, .board-time {
                                     margin: 0;
                                     margin-left: 1rem;
+                                    font-size: 16px;
                                 }
                                 
                                 .board-time {
                                     margin-left: 1rem;
+                                    font-size: 16px;
                                 }
                             }
 
@@ -178,7 +218,9 @@ page-profile{
                                 margin-bottom: 1rem;
 
                                 .board-link {
+                                    font-size: 12px;
                                     float: right;
+                                    width: 100%;
                                     color: #000000;
                                     text-decoration-line: underline;
                                 }
@@ -200,7 +242,7 @@ page-profile{
                         width: 33.3%;
 
                         .smedia-img {
-                            width: 30%;
+                            width: 100%;
                         }
                     }
                 }

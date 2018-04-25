@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Upload my Social Network</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <h5 id="ty">If you want a share your Social Networks please write them :)</h5>
+    <div class="outer-content">
+          <ion-item>
+            <ion-input 
+              placeholder="Facebook Link" 
+              [(ngModel)]="event.linkFb"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input 
+              placeholder="YouTube Link" 
+              [(ngModel)]="event.linkYt"
+            ></ion-input>
+          </ion-item>
+            <ion-item>
+            <ion-input 
+              placeholder="Twitter Link" 
+              [(ngModel)]="event.linkTt"
+            ></ion-input>
+          </ion-item>
+      </div>
+      <ion-buttons id="update-links-btn">
+          <button 
+            ion-button 
+            class="agree"
+            (click)="saveLinks()">Aceptar
+          </button>               
+          <button ion-button class="dismiss" (click)="closeEditLinks()">
+            Cancelar
+          </button>
+      </ion-buttons>
+</ion-content>

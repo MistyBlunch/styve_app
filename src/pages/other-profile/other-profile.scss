@@ -1,0 +1,257 @@
+ion-menu {
+  height: 53px;
+}
+
+ion-title {
+  text-align: center
+}
+
+  .scroll-content {
+      padding: 0;
+
+      .container.profile-page {
+          padding: 20px;
+          width: 100%;
+
+          .profile {
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              height: 30%;
+
+              img.profile-img {
+                  height: 30%;
+                  width: 30%;
+                  border-radius: 50%;
+              }
+
+              .item-inner{
+                  border-bottom: transparent !important;
+                  padding: 0 !important;
+              }
+
+              .profile-content {
+                  display: flex;
+                  flex-direction: column;
+                  width: 100%;
+
+                  .profile-name {
+                      display: block;
+                      text-align: right;
+                      margin-bottom: 0px;
+                      margin-right: 0.53rem;
+                  }
+
+                  .star-level {
+                      float: right;
+                      direction: rtl;
+                      unicode-bidi: bidi-override;
+                      // background-color: brown;
+
+                      .star-icon {
+                          color: black;
+                      }
+
+                      .star-icon:hover ~ .star-icon{
+                          color: yellow;
+                          transition: 0.1s;
+                      }
+                  }
+              }
+          }
+
+          p#level-name {
+              margin: 0 0.7rem 0 0;
+              text-align: right;
+              font-weight: 900;
+          }
+
+          .profile-options {
+              width: 100%;
+              height: 20%;
+              // padding: 1rem;
+
+              .botones {
+                  position: relative;
+                  text-align: right;
+                  
+                  .boton-opcion {
+                      margin-left: 2rem;
+                  
+                      ion-popover.popover-md.popover-bottom {
+                          top: -30% !important;
+                          left: -10%;
+                        
+                          .social-media-wrapper {
+                            width: auto;
+                            height: auto;
+                            background-color: rgb(226, 252, 174);
+                        
+                            #social-media-title {
+                              font-size: 20px;
+                              text-align: center;
+                              margin-top: 0;
+                            }
+                        
+                            .social-media-contact-links {
+                              display: flex;
+                              flex-direction: column;
+                              top: -10%;
+                              width: 100%;
+                        
+                              .socialmedia {
+                                display: flex;
+                                flex-direction: column;
+                                margin: 1rem auto;
+                        
+                                .link {
+                                  color: #000000 !important;
+                                  margin: 0 !important;
+                                }
+                        
+                                #number {
+                                  margin: 0 !important;
+                                }
+                              }
+                            }
+                          }
+                        }
+                  }
+              }
+          }
+
+          .courses-help, .boards-wrapper, .social-media {
+              width: 100%;
+
+              .help {
+                  width: 100%;
+                  background-color: rgb(199, 194, 194);
+
+                  .courses-list {
+                      position: relative;
+                      width: 100%;
+                      padding: 1rem;
+
+                      .courses-list-min {
+                          display: flex;
+                          flex-direction: row;
+                          width: 100%;
+                          justify-content: space-around;
+
+                          .courses {
+                              width: 33.3%;
+                              display: flex;
+                              flex-direction: column;
+                              align-items: center;
+                              // margin: 1rem;
+                              padding: 1rem;
+
+                              .course-img {
+                                  width: 100%;
+                                  border-radius: 30%;
+
+                              }
+
+                              .course-name {
+                                  font-size: 15px;
+                                  color: black;
+                                  font-weight: 900;
+                                  text-align: center;
+                                  margin: 0.5rem;
+                              }
+                          }
+                      }
+                  }
+              }
+
+              .board-content {
+                  background-color: rgb(199, 194, 194);
+                  width: 90%;
+                  margin: auto;
+                  display: flex;
+                  flex-direction: row;
+
+                  .img-board {
+                      width: 20%;
+                      padding: 1.5rem;
+                      margin-right: 1rem;
+                  }
+
+                  .board-course {
+                      width: 70%;
+                      display: flex;
+                      flex-direction: column;
+                      margin: 0 1.5rem 0 0;
+
+                      .board-title {
+                          margin-left: 0.5rem;
+                          font-size: 20px;
+                          font-weight: 600;
+                          text-align: right;
+                      }
+
+                      .board-description {
+                          display: flex;
+                          flex-direction: column;
+                          margin: auto 0;
+
+                          .description-title {
+                              display: flex;
+                              flex-direction: row;
+                              justify-content: flex-end;
+                              margin-bottom: 0.5rem;
+
+                              .board-date, .board-time {
+                                  margin: 0;
+                                  margin-left: 1rem;
+                              }
+                              
+                              .board-time {
+                                  margin-left: 1rem;
+                              }
+                          }
+
+                          .description-link {
+                              margin-bottom: 1rem;
+
+                              .board-link {
+                                  float: right;
+                                  width: 100%;
+                                  color: #000000;
+                                  text-decoration-line: underline;
+                              }
+                          }
+                      }
+                  }
+              }
+
+              .smedia-list {
+                  display: flex;
+                  flex-direction: row;
+                  margin: 2rem 4rem;
+                  text-align: center;
+
+                  .smedia {
+                      align-items: center;
+                      display: flex;
+                      flex-direction: column;
+                      width: 33.3%;
+
+                      .smedia-img {
+                          width: 30%;
+                      }
+                  }
+              }
+          }
+      } 
+      .outer-content {
+          margin: 3rem 0;
+          
+          ion-list:first-child {
+              margin-top: 32px;
+          }
+          ion-list + ion-list {
+              margin-top: 0;
+          }
+      }  
+  }

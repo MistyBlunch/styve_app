@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>EditDashboard</ion-title>
+    <ion-title>Edit Dashboard</ion-title>
     <ion-buttons end>
       <button ion-button (click)="closeEditDashboard()">Close</button>
     </ion-buttons>
@@ -16,8 +16,8 @@
     <div class="outer-content">
         <ion-list>
           <ion-item>
-            <button 
-              ion-button 
+              <button 
+              ion-button round outline
               class="cursos" 
               (click)="presentPrompt()"
             >
@@ -28,6 +28,12 @@
             <ion-input 
               placeholder="Title" 
               [(ngModel)]="event.title"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input 
+              placeholder="Link of your YouTube channel" 
+              [(ngModel)]="event.topicLink"
             ></ion-input>
           </ion-item>
         </ion-list>

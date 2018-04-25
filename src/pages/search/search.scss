@@ -40,6 +40,7 @@ page-search{
 
                 .profile-wrapper {
                     margin-right: 1.5rem;
+                    width: 30%;
                     
                     .profile {
                         text-align: center;
@@ -50,11 +51,14 @@ page-search{
 
                         .person-img {
                             width: 100px;
+                            border-radius: 50%;
+                            height: 10rem;
                         }
 
                         .person-name {
                             margin: 0;
                             font-size: 14px;
+                            background-color: rgb(209, 208, 208);
                         }
 
                         .star-level {
@@ -67,11 +71,11 @@ page-search{
             }
 
             .courses-wrapper {
+                width: 70%;
                 
                 .courses-container {
                     width: 100%;
-                    
-                    margin: 2rem 0 !important;
+                    margin: 0 !important;
                     display: flex;
                     flex-direction: column;
 
@@ -81,6 +85,7 @@ page-search{
 
                         h6.course-title{
                             font-size: 20px !important;
+                            margin-top: 0;
                         } 
 
                         // .courses {
@@ -97,22 +102,24 @@ page-search{
                             .link {
                                 display: flex;
                                 width: 60%;
-                                margin: 0;
         
-                                #youtube-link {
-                                  margin: auto 1rem;
+                                .youtube-icon {
+                                    margin: 0;
+                                    width: 20%;
+                                    margin-right: 1rem;
+                                 }
+
+                                .youtube-link {
                                   color: black;
-                        
-                                }
-        
-                                #youtube-icon {
-                                   margin: 0;
+                                  width: 80%;
                                 }
                             }
                             .characters-course {
                                 display: flex;
                                 flex-direction: column;
                                 width: 40%;
+                                margin-left: 1rem;
+                                justify-content: center;
     
                                 h6.course-date {
                                     margin: 0 !important;

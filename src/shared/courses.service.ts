@@ -41,11 +41,12 @@ export class CoursesService {
             .push({
                 members: 0,
                 respEmail: user['email'],
-                respImg: '../../assets/imgs/girl2.png',
+                respImg: user['imageUrl'],
                 respName: user['displayName'],
                 topicName: event.title,
                 date: event.date,
-                timeStarts: event.timeStarts
+                timeStarts: event.timeStarts,
+                topicLink: event.topicLink,
             });
         return new Promise(resolve => resolve(result));
     }

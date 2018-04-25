@@ -6,6 +6,20 @@ page-edit-dashboard {
 
   .outer-content {
     margin: 1rem auto;
+
+    .cursos {
+      background-color: #ffffff;
+      border-color: rgb(177, 177, 177);
+      color: #000000;
+      text-transform: none;
+      width: 100%;
+      margin-bottom: 0 !important;
+      height: 3rem;
+    }
+
+    .cursos:focus {
+      border-color: #32db64;
+    }
   }
 
   #dash-btn {

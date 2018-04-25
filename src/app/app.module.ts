@@ -20,12 +20,14 @@ import { NotificationPage } from '../pages/notifications/notifications';
 import { SearchPage } from '../pages/search/search';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingsPage } from '../pages/settings/settings';
+import { UploadLinksPage } from '../pages/upload-links/upload-links';
+
 import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
+import { OtherProfilePage } from '../pages/other-profile/other-profile';
 
 import { PopoverSocialMedia } from '../components/popover-socialmedia/popover-socialmedia';
 
 // para importar de general
-import { GeneralService } from '../shared/general.service';
 import { CoursesService } from '../shared/courses.service';
 import { LoginService } from '../shared/login.service';
 // import { QuestionsService } from '../shared/questions.service';
@@ -38,7 +40,9 @@ import { LoginService } from '../shared/login.service';
     SearchPage,
     TabsPage,
     SettingsPage,
+    UploadLinksPage,
     ProfileEditPage,
+    OtherProfilePage,
     PopoverSocialMedia
   ],
   imports: [
@@ -64,12 +68,13 @@ import { LoginService } from '../shared/login.service';
     TabsPage,
     SettingsPage,
     ProfileEditPage,
+    UploadLinksPage,
+    OtherProfilePage,
     PopoverSocialMedia
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    GeneralService,
     CoursesService,
     LoginService,
     GooglePlus,

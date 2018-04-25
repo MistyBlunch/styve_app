@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { SettingsPage } from './settings';
+import { UploadLinksPage } from './upload-links';
 
 @NgModule({
   declarations: [
-    SettingsPage,
+    UploadLinksPage,
   ],
   imports: [
-    IonicPageModule.forChild(SettingsPage),
+    IonicPageModule.forChild(UploadLinksPage),
   ],
 })
 export class OtherProfilePageModule {}

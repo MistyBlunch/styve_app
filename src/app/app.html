@@ -5,22 +5,22 @@
             <h3>You will...</h3>
             <h6>meet other people with the same tastes as you</h6>
             <div class="styve-img">
-              <img src="../assets/logo/styveLogo2.png">
+              <img src="https://lh3.googleusercontent.com/IdMjJnoCUVjAk6XDDBHfYe7E9Ymll-4_030H8BZ7Dg4v0XERdEmVANCx81voCaIjxmpUuaLgUkvslLo=w300-h400-rw-no">
             </div>
         </ion-slide>
       
           <ion-slide>
             <div class="login-wrapper">
               <div>
-                <img src="../assets/logo/styveLogo.png" alt="">
+                <img src="https://lh3.googleusercontent.com/U8sb1rG-bM-xK2bZ32zmi-STLfBDIfMtagGaju8zHTfaAgec-aOheTZ09XBDkElyuyWeFLTdRURUT6M=w600-h300-rw-no" alt="">
               </div>
               <h3 id="welcome">Login with:</h3>
               <button class="login-btn" ion-button (click)="login()">Google</button> 
               <!-- <img src="../assets/logo/styveLogo.png" alt=""> -->
-              <div class="quiz-wrapper">
+              <!-- <div class="quiz-wrapper">
                 <h3>Would you like to do a small quiz? </h3>
                 <button id="btn-quiz" ion-button block color="principal" (click)="doCheckbox()">Quiz</button>
-              </div>
+              </div> -->
             </div>
           </ion-slide>
       </ion-slides>
@@ -43,17 +43,15 @@
                 <ion-icon ios="ios-settings" md="md-settings"></ion-icon>
                 Settings
             </button>
-            <!-- prueba del popover(no es importante) -->
-            <!-- <button class="boton4" ion-item (click)="presentPopover($event)">
-                <ion-icon ios="ios-settings" md="md-settings"></ion-icon>
-                GG
-            </button> -->
-            <!-- aqui termina -->
+            <button ion-item (click)="openUploadLinksPage()">
+              <ion-icon ios="ios-git-network" md="md-git-network"></ion-icon>
+                Upload Social Networks
+            </button>
             <button ion-item (click)="logout()">
-              <ion-icon item-left ios="ios-log-out" md="md-log-out"></ion-icon>
+              <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
                   Logout
             </button>
-            <P>{{user| json}}</P>
+            <!-- <P>{{user| json}}</P> -->
             </ion-list>
           </ion-content>
       <!-- </ion-content> -->

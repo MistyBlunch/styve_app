@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { ModalController, PopoverController  } from 'ionic-angular';
 import { App, MenuController, ModalOptions } from 'ionic-angular';
 
-import { CoursesService } from '../../shared/courses.service'
-
 import { PopoverSocialMedia } from '../../components/popover-socialmedia/popover-socialmedia';
+
+import { CoursesService } from '../../shared/courses.service'
 import { LoginService } from '../../shared/login.service';
 
 @Component({
@@ -15,8 +15,9 @@ import { LoginService } from '../../shared/login.service';
   
   export class ProfilePage {
     courses: Array<any> = [];
-    linkCourses: Array<any> = [];
+    coursesLink: Array<any> = [];
     user: Object = {};
+    indexCoursesTope: number = 1;
 
     constructor(
       public menuCtrl: MenuController, 
@@ -26,8 +27,8 @@ import { LoginService } from '../../shared/login.service';
       private loginService: LoginService
     ) {}
 
-    avatar: string = 'assets/imgs/girl3.png';
-    level: string = 'Baby';
+    avatar: string;
+    // level: string = 'Baby';
 
     public event = {
       month: '2018-04-13',
@@ -57,5 +58,13 @@ import { LoginService } from '../../shared/login.service';
       popover.present({
         ev: myEvent
       });
+
+    }
+    getInitialCourses() {
+      return this.courses.slice(0, this.indexCoursesTope);
+    }
+
+    aumentarIndexCoursesTope() {
+      this.indexCoursesTope = this.indexCoursesTope + 1;
     }
   }

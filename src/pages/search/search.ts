@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
 import { CoursesService } from '../../shared/courses.service';
+import { OtherProfilePage } from '../../pages/other-profile/other-profile';
+import { LoginService } from '../../shared/login.service';
 
 @Component({
     selector: 'page-search',
@@ -10,13 +12,18 @@ import { CoursesService } from '../../shared/courses.service';
 
   export class SearchPage implements OnInit{
     courses: Array<any> = [];
-    topicLink: Array<any> = [];
+    coursesLink: Array<any> = [];
     indexCoursesTope: number = 2;
 // para el searchbar:
     searchQuery: string = '';
-    items: string[];
+    items:  Array<any> = [];
 
-    constructor(public coursesService: CoursesService)  {
+    user: Object = {};
+
+    constructor(
+      public coursesService: CoursesService,
+      public navCtrl: NavController,
+      private loginService: LoginService)  {
       this.initializeItems();  //searchbar
     }
 
@@ -24,7 +31,8 @@ import { CoursesService } from '../../shared/courses.service';
       this.coursesService.getCourses().subscribe(courses => {
         this.courses = courses;
         console.log(courses);
-      })
+      });
+      this.user = this.loginService.getUser();
     }
     
     getInitialCourses() {
@@ -35,18 +43,9 @@ import { CoursesService } from '../../shared/courses.service';
       this.indexCoursesTope = this.indexCoursesTope + 3;
     }
 
-    // heartsCount() {
-    //   this.
-    // }
-
     initializeItems() {
       this.items = [
-        // 'CSS',
-        // 'Float',
-        // 'Microncontroller',
-        // 'IoT',
-        // 'Arduino', 
-        // 'Flexbox',
+        this.courses,
       ]
     }
 
@@ -65,4 +64,11 @@ import { CoursesService } from '../../shared/courses.service';
       }
     }
 
+    showOtherProfile() {
+      this.navCtrl.push(OtherProfilePage);
+    }
+
+    getUser() {
+      return this.user;
+    }
   }

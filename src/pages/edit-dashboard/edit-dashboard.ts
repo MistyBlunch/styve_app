@@ -16,7 +16,8 @@ export class EditDashboardPage {
     timeStarts: '07:43',
     timeEnds: '1990-02-20',
     selectedCourseKey: null,
-    title: null
+    title: null,
+    topicLink: null
   }
 
   constructor(
@@ -42,7 +43,7 @@ export class EditDashboardPage {
 
   presentPrompt() {
     let alert = this.alertCtrl.create({
-      title: 'selecciona un curso',
+      title: 'Select a course',
       inputs: this.courses,
       buttons: [
         {
